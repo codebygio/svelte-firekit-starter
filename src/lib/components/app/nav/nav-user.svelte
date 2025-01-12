@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
@@ -20,6 +21,7 @@
 
 	async function logOut() {
 		await firekitAuth.logOut();
+		goto('/');
 	}
 </script>
 
@@ -85,7 +87,7 @@
 					<DropdownMenu.Group>
 						<DropdownMenu.Item>
 							{#snippet child({ props })}
-								<a href="/account/profile" {...props}>
+								<a href="/account" {...props}>
 									<BadgeCheck />
 									<span>Account</span>
 								</a>
@@ -101,7 +103,7 @@
 						</DropdownMenu.Item>
 						<DropdownMenu.Item>
 							{#snippet child({ props })}
-								<a href="/account/notifications" {...props}>
+								<a href="/notifications" {...props}>
 									<Bell />
 
 									<span>Notifications</span>

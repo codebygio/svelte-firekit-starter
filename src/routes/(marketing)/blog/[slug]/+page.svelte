@@ -58,7 +58,7 @@
         </div>
 
       <!-- Article Content -->
-      <div class="prose prose-lg max-w-none dark:prose-invert">
+      <div class="prose md:prose-lg lg:prose-xl max-w-none dark:prose-invert">
         <data.content />
       </div>
 	      <!-- Categories -->

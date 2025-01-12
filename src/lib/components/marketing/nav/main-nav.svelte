@@ -7,8 +7,17 @@
 	import { marketingNavItems, siteConfig } from '../../../../config';
 	import SocialMediaIcons from '$lib/components/shared/social-media-icons.svelte';
 	import { firekitUser } from 'svelte-firekit';
+	import { page } from '$app/state';
+	let path = $derived(page.url.pathname);
+	let previousPath = $state(page.url.pathname);
 
 	let isNavOpen = $state(false);
+	$effect(() => {
+		if (previousPath !== path) {
+			isNavOpen = false;
+			previousPath = path;
+		}
+	});
 </script>
 
 <div class="fixed inset-x-0 top-0 z-10 flex h-fit flex-col">
