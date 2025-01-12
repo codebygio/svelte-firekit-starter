@@ -12,10 +12,9 @@ export const siteConfig = {
 };
 
 export const marketingNavItems: NavItem[] = [
-
     {
-        title: "Blog",
-        url: "/blog"
+        title: "Home",
+        url: "/"
     },
 
     {
@@ -25,6 +24,15 @@ export const marketingNavItems: NavItem[] = [
     {
         title: "Pricing",
         url: "/pricing"
+    },
+
+    {
+        title: "Blog",
+        url: "/blog"
+    },
+    {
+        title: "Contact",
+        url: "/contact"
     },
 ];
 
@@ -56,3 +64,9 @@ export const socialLinks: SocialLink[] = [
         icon: 'github'
     },
 ];
+
+export const contactInfo = {
+    email: 'info@codegio.com',
+    phone: '+52 818 201 2602',
+    address: 'Monterrey, Mexico',
+}

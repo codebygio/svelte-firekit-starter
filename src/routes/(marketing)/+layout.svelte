@@ -5,5 +5,7 @@
 </script>
 
 <MainNav />
-{@render children()}
+<main class="pt-16">
+	{@render children()}
+</main>
 <MainFooter />

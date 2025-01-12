@@ -1,6 +1,15 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+type DateStyle = Intl.DateTimeFormatOptions['dateStyle']
+
+interface DateFormatOptions {
+	dateStyle?: DateStyle
+	timeStyle?: Intl.DateTimeFormatOptions['timeStyle']
+	locales?: string | string[]
+	timeZone?: string
+}
+
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
@@ -72,4 +81,32 @@ export function timeAgoShort(date: Date): string {
 		return interval === 1 ? '1m' : `${interval}m`;
 	}
 	return seconds === 1 ? '1s' : `${seconds}s`;
+}
+
+
+export function formatDate(date: string | Date, options: DateFormatOptions = {}) {
+	try {
+		const {
+			dateStyle = 'medium',
+			timeStyle,
+			locales = 'en',
+			timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+		} = options
+
+		const dateToFormat = date instanceof Date ? date : new Date(date.replaceAll('-', '/'))
+
+		if (isNaN(dateToFormat.getTime())) {
+			throw new Error(`Invalid date: ${date}`)
+		}
+
+		const formatOptions: Intl.DateTimeFormatOptions = {
+			dateStyle,
+			...(timeStyle && { timeStyle }),
+			timeZone
+		}
+
+		return new Intl.DateTimeFormat(locales, formatOptions).format(dateToFormat)
+	} catch {
+		return new Date(date).toLocaleDateString()
+	}
 }

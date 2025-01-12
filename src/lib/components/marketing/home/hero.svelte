@@ -4,7 +4,7 @@
 	import { siteConfig } from '../../../../config';
 </script>
 
-<section class="bg-[url('/hero-bg.png')] bg-cover bg-center pt-28 lg:pt-32">
+<section class=" bg-center pt-28 lg:pt-32">
 	<div class=" mx-auto flex max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8">
 		<Button variant="outline" class="mb-4 rounded-full" size="lg">
 			Explore how to use this template <ArrowRight />
@@ -35,9 +35,9 @@
 		</div>
 
 		<img
-			src="https://pagedone.io/asset/uploads/1691054543.png"
+			src="/screenshot.png"
 			alt="Dashboard screenshot"
-			class="h-auto rounded-t-3xl object-cover"
+			class="h-auto rounded-t-3xl object-cover border-4 "
 		/>
 	</div>
 </section>
