@@ -70,3 +70,66 @@ export const contactInfo = {
     phone: '+52 818 201 2602',
     address: 'Monterrey, Mexico',
 }
+
+export const plans = {
+    monthly: [
+        {
+            type: 'Hobby',
+            price: '0',
+            name: 'Personal Projects',
+            features: ['1 project', 'Basic Firebase setup', 'Community support', 'Basic components']
+        },
+        {
+            type: 'Pro',
+            price: '29',
+            name: 'Professional',
+            features: [
+                'Unlimited projects',
+                'Priority support',
+                'Advanced components',
+                'Custom configurations'
+            ]
+        },
+        {
+            type: 'Enterprise',
+            price: '99',
+            name: 'Team Plan',
+            features: [
+                'Team collaboration',
+                'Custom integrations',
+                'Advanced security',
+                'Dedicated support'
+            ]
+        }
+    ],
+    yearly: [
+        {
+            type: 'Hobby',
+            price: '0',
+            name: 'Personal Projects',
+            features: ['1 project', 'Basic Firebase setup', 'Community support', 'Basic components']
+        },
+        {
+            type: 'Pro',
+            price: '290',
+            name: 'Professional',
+            features: [
+                'Unlimited projects',
+                'Priority support',
+                'Advanced components',
+                'Custom configurations'
+            ]
+        },
+        {
+            type: 'Enterprise',
+            price: '990',
+            name: 'Team Plan',
+            features: [
+                'Team collaboration',
+                'Custom integrations',
+                'Advanced security',
+                'Dedicated support'
+            ]
+        }
+    ]
+};

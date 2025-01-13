@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import Button from '$lib/components/ui/button/button.svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
-	import type { UserProfile } from '$lib/types/user';
+	import { userProfile } from '$lib/stores/user.svelte';
 	import { getInitials } from '$lib/utils';
 	import BadgeCheck from 'lucide-svelte/icons/badge-check';
 	import Bell from 'lucide-svelte/icons/bell';
@@ -12,10 +13,9 @@
 	import CreditCard from 'lucide-svelte/icons/credit-card';
 	import LogOut from 'lucide-svelte/icons/log-out';
 	import Sparkles from 'lucide-svelte/icons/sparkles';
-	import { firekitAuth, firekitDoc, firekitUser } from 'svelte-firekit';
+	import { firekitAuth } from 'svelte-firekit';
 
-	let userdata = $state(firekitDoc<UserProfile>(`users/${firekitUser.uid}`));
-	let user = $derived(userdata.data);
+	let user = $derived(userProfile.data);
 
 	const sidebar = useSidebar();
 
@@ -95,7 +95,7 @@
 						</DropdownMenu.Item>
 						<DropdownMenu.Item>
 							{#snippet child({ props })}
-								<a href="/account/billing" {...props}>
+								<a href="/billing" {...props}>
 									<CreditCard />
 									<span>Billing</span>
 								</a>

@@ -5,71 +5,9 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Switch } from '$lib/components/ui/switch';
 	import { Database, Check } from 'lucide-svelte';
+	import { plans } from '../../../config';
 
 	let isYearly = false;
-
-	const plans = {
-		monthly: [
-			{
-				type: 'Hobby',
-				price: '0',
-				name: 'Personal Projects',
-				features: ['1 project', 'Basic Firebase setup', 'Community support', 'Basic components']
-			},
-			{
-				type: 'Pro',
-				price: '29',
-				name: 'Professional',
-				features: [
-					'Unlimited projects',
-					'Priority support',
-					'Advanced components',
-					'Custom configurations'
-				]
-			},
-			{
-				type: 'Enterprise',
-				price: '99',
-				name: 'Team Plan',
-				features: [
-					'Team collaboration',
-					'Custom integrations',
-					'Advanced security',
-					'Dedicated support'
-				]
-			}
-		],
-		yearly: [
-			{
-				type: 'Hobby',
-				price: '0',
-				name: 'Personal Projects',
-				features: ['1 project', 'Basic Firebase setup', 'Community support', 'Basic components']
-			},
-			{
-				type: 'Pro',
-				price: '290',
-				name: 'Professional',
-				features: [
-					'Unlimited projects',
-					'Priority support',
-					'Advanced components',
-					'Custom configurations'
-				]
-			},
-			{
-				type: 'Enterprise',
-				price: '990',
-				name: 'Team Plan',
-				features: [
-					'Team collaboration',
-					'Custom integrations',
-					'Advanced security',
-					'Dedicated support'
-				]
-			}
-		]
-	};
 </script>
 
 <section class="py-24">
