@@ -1,14 +1,14 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import { createHighlighter } from 'shiki';
+import { getSingletonHighlighter } from 'shiki';
 
 // Cache highlighter instance
 let shikiHighlighter = null;
 
 const getShikiHighlighter = async () => {
 	if (!shikiHighlighter) {
-		shikiHighlighter = await createHighlighter({
+		shikiHighlighter = await getSingletonHighlighter({
 			themes: ['github-dark'],
 			langs: ['javascript', 'typescript', 'svelte', 'html', 'css', 'bash', 'markdown']
 		});
