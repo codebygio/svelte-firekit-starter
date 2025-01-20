@@ -6,7 +6,12 @@
 
 <section class=" bg-center pt-28 lg:pt-32">
 	<div class=" mx-auto flex max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8">
-		<Button variant="outline" class="mb-4 rounded-full" size="lg">
+		<Button
+			variant="outline"
+			class="mb-4 rounded-full"
+			size="lg"
+			href="https://codebygio.com/libs/svelte-firekit-starter"
+		>
 			Explore how to use this template <ArrowRight />
 		</Button>
 		<h1 class="mb-5 max-w-2xl text-center text-4xl font-bold md:text-5xl">
@@ -17,7 +22,11 @@
 		</p>
 		<div class="mb-12 flex flex-col gap-2 md:flex-row">
 			<Button size="lg" href="/sign-in">Get Started Now</Button>
-			<Button size="lg" variant="outline">
+			<Button
+				size="lg"
+				variant="outline"
+				href="https://github.com/codebygio/svelte-firekit-starter"
+			>
 				<svg
 					class="size-3.5 shrink-0"
 					xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +46,7 @@
 		<img
 			src="/screenshot.png"
 			alt="Dashboard screenshot"
-			class="h-auto rounded-t-3xl object-cover border-4 "
+			class="h-auto rounded-t-3xl border-4 object-cover"
 		/>
 	</div>
 </section>

@@ -19,8 +19,12 @@
 			<div
 				class="mx-auto flex max-w-lg flex-col justify-center gap-5 md:max-w-2xl md:flex-row lg:max-w-full"
 			>
-				<Button size="lg">Start Building</Button>
-				<Button variant="outline" size="lg">View Documentation</Button>
+				<Button size="lg" href="https://github.com/codebygio/svelte-firekit-starter"
+					>Start Building</Button
+				>
+				<Button variant="outline" size="lg" href="https://codebygio.com/libs/svelte-firekit-starter"
+					>View Documentation</Button
+				>
 			</div>
 		</div>
 
@@ -43,7 +47,7 @@
 									Get started with Firebase Authentication in minutes. Email/password, Google, and
 									social auth providers pre-configured.
 								</p>
-								<Button variant="outline">
+								<Button variant="outline" href="https://codebygio.com/libs/svelte-firekit/auth">
 									Explore Auth
 									<span class="ml-2">→</span>
 								</Button>
@@ -70,7 +74,10 @@
 					<p class="mb-8 text-xs font-normal">
 						Built-in Firestore hooks and utilities for real-time data sync and CRUD operations
 					</p>
-					<Button variant="outline">
+					<Button
+						variant="outline"
+						href="https://codebygio.com/libs/svelte-firekit/firestore/doc-mutation"
+					>
 						View Database
 						<span class="ml-2">→</span>
 					</Button>
@@ -87,7 +94,7 @@
 					<p class="mb-8 text-xs font-normal">
 						Ready-to-use dark mode toggle with local storage persistence
 					</p>
-					<Button variant="outline">
+					<Button variant="outline" href="https://github.com/svecosystem/mode-watcher">
 						Toggle Dark Mode
 						<span class="ml-2">→</span>
 					</Button>

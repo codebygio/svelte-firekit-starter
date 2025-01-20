@@ -54,13 +54,13 @@ export const appNavItems: SidebarNav[] = [
 
 export const socialLinks: SocialLink[] = [
     {
-        title: 'linkedin-username',
-        url: 'https://www.linkedin.com/in/username/',
+        title: 'giovanirodriguez26',
+        url: 'https://www.linkedin.com/in/giovanirodriguez26/',
         icon: 'linkedin'
     },
     {
-        title: 'github-username',
-        url: 'https://github.com/username',
+        title: 'codebygio',
+        url: 'https://github.com/codebygio',
         icon: 'github'
     },
 ];
