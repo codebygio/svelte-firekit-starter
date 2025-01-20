@@ -18,7 +18,7 @@ A comprehensive starter template for building full-stack Svelte applications wit
 ### Prerequisites
 
 - Node.js (v18 or higher)
-- npm or pnpm
+- npm or npm
 - Firebase project
 
 ### Installation
@@ -31,7 +31,7 @@ A comprehensive starter template for building full-stack Svelte applications wit
 
 2. Install dependencies:
    ```bash
-   pnpm install
+   npm install
    ```
 
 3. Configure Firebase:
@@ -49,7 +49,7 @@ A comprehensive starter template for building full-stack Svelte applications wit
 
 4. Start the development server:
    ```bash
-   pnpm dev
+   npm dev
    ```
 
 ## Project Structure
@@ -183,7 +183,7 @@ await createUser(email, password);
 
 1. Build the application:
    ```bash
-   pnpm build
+   npm build
    ```
 ## Contributing
 
