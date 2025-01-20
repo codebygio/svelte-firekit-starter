@@ -1,38 +1,194 @@
-# sv
+# Svelte FireKit Starter
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A comprehensive starter template for building full-stack Svelte applications with Firebase integration. This template includes authentication, blog functionality, marketing pages, and a basic app setup with sidebar navigation.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- 🔥 Firebase Authentication
+- 📝 Blog system using MDsveX
+- ✨ Code highlighting with Shiki
+- 🎨 Styling with ShadcN
+- 🛡️ Protected routes with auth guards
+- 📱 Responsive design
+- 📄 Pre-built marketing pages (Home, Features, Pricing, Contact)
+- 🔒 Authentication flows (Sign in, Sign up, Forgot password)
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Getting Started
 
-# create a new project in my-app
-npx sv create my-app
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or pnpm
+- Firebase project
+
+### Installation
+
+1. Use this template by clicking "Use this template" on GitHub or fork the repository:
+   ```bash
+   git clone https://github.com/YourUsername/svelte-firekit-starter.git
+   cd svelte-firekit-starter
+   ```
+
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+3. Configure Firebase:
+   - Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
+   - Enable Authentication service and select your preferred providers
+   - Create a `.env` file in the root directory:
+   ```env
+   PUBLIC_FIREBASE_API_KEY=your_api_key
+   PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   PUBLIC_FIREBASE_APP_ID=your_app_id
+   ```
+
+4. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+
+## Project Structure
+
+```
+├── src/
+│   ├── lib/
+│   │   ├── components/     # Reusable components
+│   │   ├── firebase/      # Firebase configuration
+│   │   └── utils/         # Utility functions
+│   ├── routes/
+│   │   ├── app/          # Protected application routes
+│   │   ├── auth/         # Authentication pages
+│   │   ├── blog/         # Blog pages
+│   │   └── +page.svelte  # Landing page
+│   └── posts/            # MDsveX blog posts
+├── static/               # Static assets
+└── svelte.config.js      # Svelte configuration
 ```
 
-## Developing
+## Authentication
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+The template includes pre-built authentication flows:
 
-```bash
-npm run dev
+- Sign In (`/auth/signin`)
+- Sign Up (`/auth/signup`)
+- Forgot Password (`/auth/forgot-password`)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Protected routes are handled by the auth guard in `src/routes/app/+layout.ts`.
+
+### Using Protected Routes
+
+```typescript
+// src/routes/app/+layout.ts
+import { redirect } from '@sveltejs/kit';
+import type { LayoutLoad } from './$types';
+import { getUser } from '$lib/firebase/auth';
+
+export const load: LayoutLoad = async ({ url }) => {
+  const user = await getUser();
+  
+  if (!user) {
+    throw redirect(307, `/auth/signin?redirect=${url.pathname}`);
+  }
+
+  return { user };
+};
 ```
 
-## Building
+## Blog System
 
-To create a production version of your app:
+The blog system uses MDsveX for Markdown processing and Shiki for code highlighting.
 
-```bash
-npm run build
+### Creating a New Blog Post
+
+1. Create a new `.md` file in `src/posts/`
+2. Add frontmatter:
+   ```markdown
+   ---
+   title: "Your Post Title"
+   publishedAt: "2024-01-19"
+   author: "Your Name"
+   tags: ["svelte", "firebase", "typescript"]
+   excerpt: "Brief description of your post"
+   categories: ["Tutorial"]
+   featuredImage: {
+     url: "https://placehold.co/1200x630",
+     alt: "Featured Image Alt Text",
+     caption: "Image caption"
+   }
+   seo: {
+     title: "SEO-optimized title",
+     description: "SEO description for better search engine visibility",
+     keywords: ["keyword1", "keyword2", "keyword3"],
+     ogImage: "https://placehold.co/1200x630"
+   }
+   published: true
+   ---
+
+   Your content here...
+   ```
+
+### Code Highlighting
+
+Code blocks are automatically highlighted using Shiki:
+
+```svelte
+<script>
+  let count = 0;
+</script>
+
+<button on:click={() => count++}>
+  Count is {count}
+</button>
 ```
 
-You can preview the production build with `npm run preview`.
+## ShadcN Components
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The template uses ShadcN for UI components. Import components from `$lib/components/ui`:
+
+```svelte
+<script>
+  import { Button } from '$lib/components/ui/button';
+</script>
+
+<Button variant="default">Click me</Button>
+```
+
+## Svelte FireKit Integration
+
+The template uses Svelte FireKit for Firebase integration. Common operations:
+
+### Authentication
+
+```typescript
+import { signIn, signOut, createUser } from 'svelte-firekit/auth';
+
+// Sign in
+await signIn(email, password);
+
+// Sign out
+await signOut();
+
+// Create user
+await createUser(email, password);
+```
+
+
+
+## Deployment
+
+1. Build the application:
+   ```bash
+   pnpm build
+   ```
+## Contributing
+
+Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
