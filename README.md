@@ -2,6 +2,9 @@
 
 A comprehensive starter template for building full-stack Svelte applications with Firebase integration. This template includes authentication, blog functionality, marketing pages, and a basic app setup with sidebar navigation.
 
+📚 **[View Documentation](https://codebygio.com/libs/svelte-firekit-starter)**
+
+
 ## Features
 
 - 🔥 Firebase Authentication
@@ -189,6 +192,7 @@ await createUser(email, password);
 
 Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
 
+For detailed documentation and guides, visit [https://codebygio.com/libs/svelte-firekit-starter](https://codebygio.com/libs/svelte-firekit-starter)
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
